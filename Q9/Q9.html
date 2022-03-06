@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max and Min of array</title>
+</head>
+<body>
+    <h1>Click to find out maximum and minimum number<br> from an numeric array and swap both position</h1>
+
+<!-- the following tags are used to display the redult values -->
+    <h2 id="ar"></h2>
+    <h2 id="mi"></h2>
+    <h2 id="ma"></h2>
+    <h2 id="ars"></h2>
+    <!-- when we click the button the function arrayMinMax() will be called -->
+    <button onclick="arrayMaxMin()">Click here</button>
+
+    <script type="text/javascript">
+        function arrayMaxMin(){
+            // this function will ask the users to enter the array elements
+            var num=window.prompt("enter number of element in array :");
+            var arr=[];
+            for(var i=0;i<num;i++)
+            {
+                arr[i]=window.prompt("enter number : ");
+            }
+            var min=arr[0];
+            var max=arr[0];
+            var ip=0,jp=0;
+
+            //to find the minimum value, minimum value position && maximum value, maximum value position
+            for(var i=0;i<num;i++)
+            {
+                if(arr[i]>max)
+                {
+                        ip=i;
+                        max=arr[i];
+                }
+                if(arr[i]<min)
+                {
+                        jp=i;
+                        min=arr[i];
+                }
+            }
+
+            //display the array, min, max values in html page
+            let a=arr.toString();
+            document.getElementById("ar").innerHTML="The entered aray elements are : "+a;
+            document.getElementById("mi").innerHTML="The minimum element is : "+min;
+            document.getElementById("ma").innerHTML="The maximum element is : "+max;
+
+            //swap the min and max positions
+            var temp=arr[ip];
+            arr[ip]=arr[jp];
+            arr[jp]=temp;
+
+            //display the array after swapping
+            document.getElementById("ars").innerHTML="Array after swaping of min and max values : "+arr.toString();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form>Select your favorite Color :
+      <select id="mySelect">
+        <option>Red</option>
+        <option>Green</option>
+        <option>Blue</option>
+      </select>
+      <input type="button" onclick="getOptions()" value="Count">
+    </form>
+
+    <script>
+        function getOptions(){
+            var x= document.getElementById("mySelect")
+            var txt1 = "Number of items in dropdown list is : ";
+            var i;
+            l=document.getElementById("mySelect").length;  
+            txt1 = txt1+l;
+            for (i=0;i<x.length;i++)
+            {
+                txt1 = txt1 + "\n" + x.options[i].text;
+            }
+            alert(txt1);
+        }
+    </script>
+  </body>
+</html>
